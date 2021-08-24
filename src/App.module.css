@@ -1,0 +1,40 @@
+@import url('./index.css');
+
+body,
+html {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    padding: 0%;
+    margin: 0%;
+}
+
+.titleCounter{
+    width: 100%;
+    height: 107px;
+    display: flex;
+}
+
+.headerContainer {
+    width: 80%;
+    height: 100%;
+    background-color: #9dffb0;
+}
+
+.scoreBoardContainer{
+    width: 20%;
+    height: 100%;
+    background-color: #81F1F7;
+}
+
+.mainContainer {
+    width: 100%;
+    height: 470px;
+}
+
+.footerContainer{
+    width: 100%;
+    height: 80px;
+    background-color: #c48d3f;
+}
+
