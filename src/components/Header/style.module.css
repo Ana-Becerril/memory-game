@@ -1,0 +1,17 @@
+body {
+    text-align: center;
+    overflow-x: hidden;
+  }
+  .titleContainer {
+    font-family: 'PressStart2P-Regular';
+    width: 95%;
+    height: 50px;
+    padding: 30px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(157,255,176);
+    border-radius: 30px;
+    color: white;
+  }

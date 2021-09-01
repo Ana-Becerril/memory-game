@@ -1,0 +1,14 @@
+body {
+    text-align: center;
+    overflow-x: hidden;
+  }
+
+  .containerGame {
+    width: 100%;
+    height: 640px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #81F1F7;
+    border-radius: 20px;
+  }

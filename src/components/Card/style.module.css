@@ -1,0 +1,16 @@
+.card {
+    width: 160px;
+    height: 160px;
+    background-color: #C48D3F;
+    margin: 8px;
+    margin-top:20px;
+    position:relative;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4);
+    border: 3px solid #FFF563;
+    font-family: 'PressStart2P-Regular';
+    color:#FFF563;
+    font-size: 15px;
+
+  }
