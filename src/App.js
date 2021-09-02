@@ -6,9 +6,9 @@ import cards from "./cards.json";
 import styles from './App.module.css'
 
 const App = () => {
+  const [listItems, setListItems] =useState(cards)
   const [score, setScore] = useState(0)
   const [highScore, setHighScore] = useState(0)
-  const [listItems, setListItems] =useState(cards)
 
   function shuffle(arra1) {
     var ctr = arra1.length,
@@ -24,9 +24,18 @@ const App = () => {
     return arra1;
   }
 
-  useEffect(() => {
-    setListItems(shuffle(cards))
-  })
+  const idChecker = (id, arr, fnSucces1) => {
+    if (!arr.includes(id) ) {
+     arr.push(id)
+     fnSucces1()
+    }
+    console.log("Ya esta en el array")
+  }
+
+   useEffect(() => {
+     setListItems(shuffle(cards))
+   })
+
 
  const scoreCounter = () => {
    setScore(score+1)
@@ -36,6 +45,7 @@ const App = () => {
   const json = JSON.stringify(score)
   localStorage.setItem('memorygamehighscore', json)
 }
+
 
 
 return (
@@ -52,14 +62,14 @@ return (
           {listItems.map(cards => (
             <Card
               scoreCounter={scoreCounter}
+              fnSucces1={shuffle}
               key={cards.id}
               id={cards.id}
               name={cards.name}
               image={cards.image}
               alt={cards.alt}
-              shuffle={shuffle}
-              cards={cards}
-              // selectedImage={selectedImage}
+              cards={listItems}
+              idChecker={idChecker}
             />
           ))}
         </div>
