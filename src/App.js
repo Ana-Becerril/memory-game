@@ -24,17 +24,19 @@ const App = () => {
     return arra1;
   }
 
-  const idChecker = (id, arr, fnSucces1) => {
+  const idChecker = (id, arr, fnSucces, successParam) => {
+    let newArr=[];
     if (!arr.includes(id) ) {
-     arr.push(id)
-     fnSucces1()
+     newArr.push(id)
+     fnSucces(successParam)
+     console.log(newArr)
     }
     console.log("Ya esta en el array")
   }
 
    useEffect(() => {
      setListItems(shuffle(cards))
-   })
+   }, [])
 
 
  const scoreCounter = () => {
@@ -45,7 +47,6 @@ const App = () => {
   const json = JSON.stringify(score)
   localStorage.setItem('memorygamehighscore', json)
 }
-
 
 
 return (
@@ -62,7 +63,7 @@ return (
           {listItems.map(cards => (
             <Card
               scoreCounter={scoreCounter}
-              fnSucces1={shuffle}
+              shuffle={shuffle}
               key={cards.id}
               id={cards.id}
               name={cards.name}

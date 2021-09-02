@@ -1,10 +1,10 @@
 import React from 'react'
 import styles from './style.module.css'
 
-const Card = ({alt, image, name, scoreCounter, idChecker, cards, id, shuffle}) => {
+const Card = ({alt, image, name, scoreCounter, idChecker, cards, id, shuffle,}) => {
   return (
     <div className={styles.card}>
-      <div className="card" onClick={function(){scoreCounter(); idChecker(id, cards, shuffle)}}>
+      <div className="card" onClick={function(){scoreCounter(); idChecker(id, cards, shuffle, cards )}}>
         <div className={styles.imgContainer}>
           <img alt={alt} src={image} />
         </div>
