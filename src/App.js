@@ -9,6 +9,7 @@ const App = () => {
   const [listItems, setListItems] =useState(cards)
   const [score, setScore] = useState(0)
   const [highScore, setHighScore] = useState(0)
+  const [itemSelected, setItemSelected] = useState([])
 
   function shuffle(arra1) {
     var ctr = arra1.length,
@@ -25,15 +26,15 @@ const App = () => {
   }
 
   const idChecker = (id, arr, fnSucces, successParam) => {
-    let newArr=[];
-    if (!arr.includes(id) ) {
-     newArr.push(id)
-     fnSucces(successParam)
-     console.log(newArr)
-    }
-    console.log("Ya esta en el array")
+    if (!arr.includes(id)) {
+       arr.push(id)
+       fnSucces(successParam)
+       setItemSelected(arr);
+       console.log(arr)
+      }
+      return null
   }
-
+  
    useEffect(() => {
      setListItems(shuffle(cards))
    }, [])
@@ -62,6 +63,8 @@ return (
   <div className={styles.cardsContainer}>
           {listItems.map(cards => (
             <Card
+              itemSelected={itemSelected}
+              setItemSelected={setItemSelected}
               scoreCounter={scoreCounter}
               shuffle={shuffle}
               key={cards.id}
