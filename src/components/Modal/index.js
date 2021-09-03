@@ -4,8 +4,8 @@ import styles from './style.module.css'
 const Modal = () => {
     return (
         <>
-        <div className={styles.modalContainer}>
-            <h1 className={styles.modal}>Hi, Im a modal, loser!</h1>
+        <div className={styles.modal}>
+            <h1 className={styles.modalContent}>Hi, Im a modal, loser!</h1>
         </div>
         </>
     );
