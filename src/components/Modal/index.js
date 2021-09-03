@@ -5,7 +5,7 @@ const Modal = () => {
     return (
         <>
         <div className={styles.modal}>
-            <h1 className={styles.modalContent}>Hi, you're the love of my life!</h1>
+            <h1 className={styles.modalContent}>YOU LOST! You clicked an image twice!</h1>
         </div>
         </>
     );

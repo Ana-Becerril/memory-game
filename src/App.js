@@ -33,6 +33,7 @@ const App = () => {
       fnSucces(successParam)
       setItemSelected(arr);
       scoreCounter()
+      handleScore()
       console.log(arr)
     } else {
       setScore(0)
@@ -53,6 +54,11 @@ const App = () => {
     localStorage.setItem('memorygamehighscore', json)
   }
 
+  const handleScore = () => {
+    if (score === 21-1) {
+      setShowModal(true)
+    }
+  }
 
   return (
     <>
