@@ -3,6 +3,7 @@ import Card from './components/Card';
 import Wrap from './components/Wrap'
 import Header from './components/Header'
 import cards from "./cards.json";
+import Modal from "./components/Modal"
 import styles from './App.module.css'
 
 const App = () => {
@@ -10,6 +11,7 @@ const App = () => {
   const [score, setScore] = useState(0)
   const [highScore, setHighScore] = useState(0)
   const [itemSelected, setItemSelected] = useState([])
+  const [showModal, setShowModal] = useState(false);
 
   function shuffle(arra1) {
     var ctr = arra1.length,
@@ -33,13 +35,12 @@ const App = () => {
       scoreCounter()
       console.log(arr)
     }
-    return null
+    setShowModal(true)
   }
 
   useEffect(() => {
     setListItems(shuffle(cards))
   }, [])
-
 
   const scoreCounter = () => {
     setScore(score + 1)
@@ -66,7 +67,6 @@ const App = () => {
             <Card
               itemSelected={itemSelected}
               setItemSelected={setItemSelected}
-              // scoreCounter={scoreCounter}
               shuffle={shuffle}
               key={cards.id}
               id={cards.id}
@@ -76,8 +76,10 @@ const App = () => {
               cards={listItems}
               idChecker={idChecker}
             />
+            
           ))}
         </div>
+        { showModal ? <Modal/> : null }
       </Wrap>
     </>
 
