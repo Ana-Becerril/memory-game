@@ -6,7 +6,7 @@ import cards from "./cards.json";
 import styles from './App.module.css'
 
 const App = () => {
-  const [listItems, setListItems] =useState(cards)
+  const [listItems, setListItems] = useState(cards)
   const [score, setScore] = useState(0)
   const [highScore, setHighScore] = useState(0)
   const [itemSelected, setItemSelected] = useState([])
@@ -27,45 +27,46 @@ const App = () => {
 
   const idChecker = (id, arr, fnSucces, successParam) => {
     if (!arr.includes(id)) {
-       arr.push(id)
-       fnSucces(successParam)
-       setItemSelected(arr);
-       console.log(arr)
-      }
-      return null
+      arr.push(id)
+      fnSucces(successParam)
+      setItemSelected(arr);
+      scoreCounter()
+      console.log(arr)
+    }
+    return null
   }
-  
-   useEffect(() => {
-     setListItems(shuffle(cards))
-   }, [])
+
+  useEffect(() => {
+    setListItems(shuffle(cards))
+  }, [])
 
 
- const scoreCounter = () => {
-   setScore(score+1)
- }
- if (score > highScore) {
-  setHighScore(score)
-  const json = JSON.stringify(score)
-  localStorage.setItem('memorygamehighscore', json)
-}
+  const scoreCounter = () => {
+    setScore(score + 1)
+  }
+  if (score > highScore) {
+    setHighScore(score)
+    const json = JSON.stringify(score)
+    localStorage.setItem('memorygamehighscore', json)
+  }
 
 
-return (
-<>
-<Wrap>
-  <div className={styles.title}>
-  <Header/>
-  <div className={styles.score}>
-  <h2>High Score:{highScore}</h2>
-  <h2>Score:{score}</h2>
-  </div>
-  </div>
-  <div className={styles.cardsContainer}>
+  return (
+    <>
+      <Wrap>
+        <div className={styles.title}>
+          <Header />
+          <div className={styles.score}>
+            <h2>High Score:{highScore}</h2>
+            <h2>Score:{score}</h2>
+          </div>
+        </div>
+        <div className={styles.cardsContainer}>
           {listItems.map(cards => (
             <Card
               itemSelected={itemSelected}
               setItemSelected={setItemSelected}
-              scoreCounter={scoreCounter}
+              // scoreCounter={scoreCounter}
               shuffle={shuffle}
               key={cards.id}
               id={cards.id}
@@ -77,9 +78,10 @@ return (
             />
           ))}
         </div>
-  </Wrap>
-</>
+      </Wrap>
+    </>
 
- ) }
+  )
+}
 export default App;
 
