@@ -12,6 +12,7 @@ const App = () => {
   const [highScore, setHighScore] = useState(0)
   const [itemSelected, setItemSelected] = useState([])
   const [showModal, setShowModal] = useState(false);
+  const [message, setMessage] = useState("")
 
   function shuffle(arra1) {
     var ctr = arra1.length,
@@ -38,6 +39,7 @@ const App = () => {
     } else {
       setScore(0)
       setShowModal(true)
+      setMessage("YOU LOST! You clicked an image twice!")
     }
   }
 
@@ -57,8 +59,10 @@ const App = () => {
   const handleScore = () => {
     if (score === 21-1) {
       setShowModal(true)
+      setMessage("YOU WON!")
     }
   }
+
 
   return (
     <>
@@ -84,10 +88,9 @@ const App = () => {
               cards={listItems}
               idChecker={idChecker}
             />
-
           ))}
         </div>
-        {showModal ? <Modal /> : null}
+        {showModal ? <Modal message={message}/> : null}
       </Wrap>
     </>
 

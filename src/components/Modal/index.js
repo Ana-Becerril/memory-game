@@ -1,11 +1,13 @@
 import React from 'react'
 import styles from './style.module.css'
 
-const Modal = () => {
+const Modal = ({message}) => {
     return (
         <>
         <div className={styles.modal}>
-            <h1 className={styles.modalContent}>YOU LOST! You clicked an image twice!</h1>
+            <div className={styles.modalContent}>{message}
+            <button> Try Again! </button>
+            </div>
         </div>
         </>
     );
