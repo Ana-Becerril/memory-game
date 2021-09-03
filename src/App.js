@@ -63,6 +63,12 @@ const App = () => {
     }
   }
 
+   const handleButton = () => {
+     setScore(0)
+     setItemSelected([])
+     setShowModal(false)
+   }
+
 
   return (
     <>
@@ -90,7 +96,7 @@ const App = () => {
             />
           ))}
         </div>
-        {showModal ? <Modal message={message}/> : null}
+        {showModal ? <Modal message={message} handleButton={handleButton}/> : null}
       </Wrap>
     </>
 

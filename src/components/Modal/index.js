@@ -1,12 +1,12 @@
 import React from 'react'
 import styles from './style.module.css'
 
-const Modal = ({message}) => {
+const Modal = ({message, handleButton}) => {
     return (
         <>
         <div className={styles.modal}>
             <div className={styles.modalContent}>{message}
-            <button> Try Again! </button>
+            <button onClick={handleButton}> Try Again! </button>
             </div>
         </div>
         </>
