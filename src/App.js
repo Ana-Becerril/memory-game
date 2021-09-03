@@ -34,8 +34,10 @@ const App = () => {
       setItemSelected(arr);
       scoreCounter()
       console.log(arr)
+    } else {
+      setScore(0)
+      setShowModal(true)
     }
-    setShowModal(true)
   }
 
   useEffect(() => {
@@ -76,10 +78,10 @@ const App = () => {
               cards={listItems}
               idChecker={idChecker}
             />
-            
+
           ))}
         </div>
-        { showModal ? <Modal/> : null }
+        {showModal ? <Modal /> : null}
       </Wrap>
     </>
 
