@@ -36,7 +36,6 @@ const App = () => {
       setItemSelected(arr);
       scoreCounter()
       handleScore()
-      console.log(arr)
     } else {
       setScore(0)
       setShowModal(true)
