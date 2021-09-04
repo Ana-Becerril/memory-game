@@ -43,3 +43,12 @@ button{
   color:#C48D3F;
 
 }
+
+
+@media only screen and (max-width: 570px) {
+  .modalContent {
+    width: 270px;
+    height: 270px;
+    font-size: 15px;
+}
+}
