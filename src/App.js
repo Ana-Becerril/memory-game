@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Card from './components/Card';
 import Wrap from './components/Wrap'
 import Header from './components/Header'
+import Footer from './components/Footer'
 import cards from "./cards.json";
 import Modal from "./components/Modal"
 import styles from './App.module.css'
@@ -97,6 +98,7 @@ const App = () => {
           ))}
         </div>
         {showModal ? <Modal message={message} handleButton={handleButton}/> : null}
+        <Footer/>
       </Wrap>
     </>
 
