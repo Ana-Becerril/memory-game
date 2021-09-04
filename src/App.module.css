@@ -1,3 +1,9 @@
+body, html{
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 .title{
   display: flex;
   flex-direction: column;
@@ -6,6 +12,7 @@
 h2{
   color:#C48D3F;
   font-family: 'PressStart2P-Regular';
+  padding: 5px;
 }
 
 .score{
@@ -18,4 +25,11 @@ h2{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+
+@media only screen and (max-width: 570px) {
+  h2 {
+      font-size: 15px;
+  } 
 }
